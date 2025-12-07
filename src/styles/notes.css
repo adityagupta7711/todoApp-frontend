@@ -1,0 +1,29 @@
+.notes-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-form input,
+.note-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+}
+
+.note-card {
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.note-card button {
+  margin-right: 10px;
+}
