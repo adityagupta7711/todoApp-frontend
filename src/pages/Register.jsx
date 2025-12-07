@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../api/auth";
+import "../styles/register.css";
+
 
 function Register() {
   const [name, setName] = useState("");

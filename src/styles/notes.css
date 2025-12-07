@@ -2,9 +2,17 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* Centers items horizontally */
+  justify-content: center; /* Centers if height available */
+  text-align: center;     /* Centers the text itself */
 }
 
 .note-form {
+  width: 100%;
+  max-width: 500px;       /* form width limit */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -15,13 +23,18 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #bbb;
+  width: 100%;            /* ensures proper center sizing */
 }
 
 .note-card {
-  background: #f7f7f7;
+  background: #6e0707ff;
   padding: 15px;
   border-radius: 8px;
   margin-top: 10px;
+
+  width: 100%;
+  max-width: 500px;        /* Keeps card centered like the form */
+  text-align: left;        /* (optional) text inside card left aligned */
 }
 
 .note-card button {

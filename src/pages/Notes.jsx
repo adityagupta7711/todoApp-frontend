@@ -1,9 +1,7 @@
-
 import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { getNotes, createNote, updateNote, deleteNote } from "../api/notes";
 import "../styles/notes.css";
-
 
 function Notes() {
   const [notes, setNotes] = useState([]);
@@ -12,7 +10,6 @@ function Notes() {
   const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  
 
   useEffect(() => {
     fetchNotes();
@@ -73,12 +70,13 @@ function Notes() {
   return (
     <div className="notes-page">
       <Navbar />
-      <h2>Your Notes</h2>
+      
+      <h1 className="notes-title">Your Notes</h1>
 
       <form onSubmit={handleCreateNote} className="note-form">
         <input
           type="text"
-          placeholder="Note Title"
+          placeholder="Note title..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -97,19 +95,29 @@ function Notes() {
       </form>
 
       {loading ? (
-        <p>Loading notes...</p>
+        <p style={{ color: "#ccc" }}>Loading notes...</p>
       ) : (
-        <div className="notes-list">
+        <div className="notes-grid">
           {notes.length === 0 ? (
-            <p>No notes yet</p>
+            <p style={{ color: "#888" }}>No notes yet</p>
           ) : (
-            Array.isArray(notes) && notes.map((note) => (
+            notes.map((note) => (
               <div key={note._id} className="note-card">
                 <h3>{note.title}</h3>
                 <p>{note.content}</p>
 
-                <button onClick={() => handleEdit(note)}>Edit</button>
-                <button onClick={() => handleDelete(note._id)}>Delete</button>
+                <div className="btn-row">
+                  <button className="edit-btn" onClick={() => handleEdit(note)}>
+                    Edit
+                  </button>
+
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelete(note._id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
             ))
           )}

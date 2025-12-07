@@ -1,124 +1,128 @@
-/* === GENERAL RESETS === */
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-/* === LOGIN PAGE === */
-.login-container {
-  width: 350px;
-  background: white;
-  padding: 25px;
-  margin: 120px auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.login-container input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login-container button {
-  padding: 10px;
-  border: none;
-  background: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-container button:hover {
-  background: #0056b3;
-}
-
-.toggle-text {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* === NOTES PAGE === */
+/* Main container */
 .notes-page {
-  width: 80%;
-  margin: 30px auto;
+  max-width: 900px;
+  margin: auto;
+  padding: 30px;
+  color: #fff;
+  background: #0f0f0f;
+  min-height: 100vh;
 }
 
+/* Heading */
+.notes-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Add Note Form */
 .note-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #181818;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
 }
 
 .note-form input,
 .note-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #242424;
+  color: white;
+  font-size: 16px;
 }
 
+.note-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
 .note-form button {
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
   border: none;
-  background: green;
+  border-radius: 8px;
+  background: #6c5ce7;
   color: white;
-  border-radius: 6px;
+  font-size: 17px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .note-form button:hover {
-  background: darkgreen;
+  background: #8a73ff;
 }
 
-.notes-list {
-  margin-top: 25px;
+/* Notes Grid */
+.notes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
 }
 
+/* Note Card */
 .note-card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: #181818;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.04);
+  transition: 0.2s;
 }
 
+.note-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Title & content */
 .note-card h3 {
-  margin-top: 0;
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.note-card p {
+  color: #ccc;
+  font-size: 15px;
+  min-height: 50px;
+}
+
+/* Buttons */
+.note-card .btn-row {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
 }
 
 .note-card button {
-  margin-right: 10px;
-  padding: 7px 12px;
+  flex: 1;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
 }
 
-.note-card button:first-of-type {
-  background: #007bff;
+.edit-btn {
+  background: #6c5ce7;
   color: white;
 }
 
-.note-card button:last-of-type {
-  background: #dc3545;
+.edit-btn:hover {
+  background: #8a73ff;
+}
+
+.delete-btn {
+  background: #c0392b;
   color: white;
+}
+
+.delete-btn:hover {
+  background: #e74c3c;
 }
